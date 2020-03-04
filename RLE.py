@@ -187,11 +187,11 @@ def _get_zig_zag_index(coord_x, coord_y):
     return zig_zag_index
 
 
-def save_compressed_to_a_file(img, filename):
-    compressed_file = open(filename + ".comp", "wb")
+def save_compressed_to_a_file(img, filename, scan_type):
+    compressed_file = open(filename + ".comp" + "-" + scan_type, "wb")
     pickle.dump(img, compressed_file)
-    compressed_path = os.path.abspath(filename + ".comp")
-    stat_info = os.stat(filename + ".comp")
+    compressed_path = os.path.abspath(filename + ".comp" + "-" + scan_type)
+    stat_info = os.stat(filename + ".comp" + "-" + scan_type)
     return stat_info.st_size, compressed_path
 
 

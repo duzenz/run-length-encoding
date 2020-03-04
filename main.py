@@ -9,7 +9,7 @@ def encode_image(path, scan_type):
     original_image = list(image.getdata(0))
     encoded_image = RLE.encode_image(original_image, image.size[0], image.size[1], image.mode, scan_type)
     temp_image = Detail(encoded_image, 1, image.size[0], image.size[1], image.mode, scan_type, image.getpalette())
-    compression_size, file_path = RLE.save_compressed_to_a_file(temp_image, path)
+    compression_size, file_path = RLE.save_compressed_to_a_file(temp_image, path, scan_type)
     print("Encoded file saved to: " + file_path)
 
 
